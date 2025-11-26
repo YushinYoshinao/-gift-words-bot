@@ -160,19 +160,21 @@
   }
 }
 
-/* スマートフォン横向き */
+/* スマートフォン横向き - PC版と同じレイアウト */
 @media (max-width: 768px) and (orientation: landscape) {
   .container {
-    gap: var(--spacing-lg);
+    gap: var(--spacing-2xl);
+    height: 100vh;
   }
 
   .word {
-    font-size: 32px;
+    font-size: 48px; /* PC版に近いサイズ */
+    height: 85vh;
   }
 
   .meaning {
-    font-size: 16px;
-    max-height: 60vh;
+    font-size: 20px; /* PC版に近いサイズ */
+    max-height: 85vh;
   }
 
   .skipHint {

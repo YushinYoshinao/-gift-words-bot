@@ -193,15 +193,23 @@
 /* スマートフォン横向き(NFR-401: PC版と同じレイアウト) */
 @media (max-width: 768px) and (orientation: landscape) {
   .container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr; /* PC版と同じ50:50 */
+    overflow: hidden;
   }
 
   .content {
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg);
+    overflow: hidden;
   }
 
   .actions {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
+    grid-row: 2;
+  }
+
+  /* ビューポートに収まるように調整 */
+  .container {
+    max-height: 100vh;
   }
 }
 

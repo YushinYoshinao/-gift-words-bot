@@ -39,7 +39,8 @@
       "Bash(npx vitest:*)",
       "Bash(npm run dev:*)",
       "Bash(git add:*)",
-      "Bash(del nul)"
+      "Bash(del nul)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: 贈る言葉BOT完成版\n\n- React + TypeScript + Viteで実装\n- 音源付き縦書きアニメーション表示\n- URL共有機能\n- 画像エクスポート機能\n- レスポンシブデザイン対応\n- 300テスト全通過\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
