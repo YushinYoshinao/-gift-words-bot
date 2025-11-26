@@ -225,6 +225,7 @@ const DisplayPage: React.FC = () => {
         <div className={styles.promptContent}>
           <p className={styles.promptText}>タップして開始</p>
           <p className={styles.promptSubtext}>音源付きで贈る言葉を表示します</p>
+          <p className={styles.promptHint}>📱 スマホは横向きでご覧ください</p>
         </div>
       </div>
     );
