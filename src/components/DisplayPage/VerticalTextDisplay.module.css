@@ -172,6 +172,11 @@
     padding-right: var(--spacing-lg); /* 右に余裕を持たせる */
   }
 
+  .wordSection::before {
+    /* 白い縦線を非表示 */
+    display: none;
+  }
+
   .word {
     font-size: 32px; /* 画面に収まるサイズ */
     height: 75vh; /* 縦幅に収める */
