@@ -184,8 +184,8 @@
   }
 
   .meaningSection::after {
-    /* 【意味】ラベルの位置調整 */
-    left: calc(100% + var(--spacing-xs));
+    /* 【意味】ラベルの位置調整 - 意味の文字列に近づける */
+    left: calc(100% + 4px);
     font-size: 12px;
   }
 
