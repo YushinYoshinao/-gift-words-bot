@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  gap: var(--spacing-2xl);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  padding: var(--spacing-2xl) var(--spacing-3xl);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* REQ-232: 縦書き */
+.wordSection,
+.meaningSection {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-family-serif);
+  -webkit-font-feature-settings: 'vkrn', 'vpal';
+  font-feature-settings: 'vkrn', 'vpal';
+  hanging-punctuation: allow-end;
+}
+
+/* REQ-204: 辞書風デザイン - メインの言葉（大きい） */
+.wordSection {
+  position: relative;
+  padding: var(--spacing-md);
+}
+
+.wordSection::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--chalk-color-yellow) 20%,
+    var(--chalk-color-yellow) 80%,
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+.word {
+  /* REQ-233: チョーク風の色 */
+  color: var(--chalk-color-yellow);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 250, 205, 0.3);
+  white-space: nowrap;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* REQ-204: 辞書風デザイン - 意味の文字列（サブ・小さい） */
+.meaningSection {
+  position: relative;
+  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-md);
+}
+
+.meaningSection::after {
+  content: '【意味】';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: var(--spacing-sm);
+  color: var(--chalk-color-yellow);
+  font-size: 14px;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  opacity: 0.8;
+}
+
+.meaning {
+  /* REQ-233: チョーク風の色 */
+  color: var(--chalk-color-white);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  height: 80vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: pre-wrap;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  padding: var(--spacing-md);
+}
+
+/* スクロールバースタイル */
+.meaning::-webkit-scrollbar {
+  width: 8px;
+}
+
+.meaning::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.meaning::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* スキップ機能 */
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:focus {
+  outline: 2px solid var(--chalk-color-yellow);
+  outline-offset: 4px;
+}
+
+.skipHint {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--chalk-color-white);
+  font-size: 14px;
+  opacity: 0.5;
+  animation: fadeInOut 2s ease-in-out infinite;
+  z-index: 50;
+  pointer-events: none;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* タブレット */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .word {
+    font-size: 40px;
+  }
+
+  .meaning {
+    font-size: 18px;
+    max-height: 65vh;
+  }
+}
+
+/* スマートフォン横向き */
+@media (max-width: 768px) and (orientation: landscape) {
+  .container {
+    gap: var(--spacing-lg);
+  }
+
+  .word {
+    font-size: 32px;
+  }
+
+  .meaning {
+    font-size: 16px;
+    max-height: 60vh;
+  }
+
+  .skipHint {
+    bottom: 60px;
+    font-size: 12px;
+  }
+}
+
+/* スマートフォン縦向き */
+@media (max-width: 768px) and (orientation: portrait) {
+  .container {
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .word {
+    font-size: 28px;
+  }
+
+  .meaning {
+    font-size: 16px;
+    max-height: 55vh;
+  }
+
+  .skipHint {
+    bottom: 100px;
+    font-size: 12px;
+  }
+}
+
+/* 極小画面 */
+@media (max-width: 375px) {
+  .word {
+    font-size: 24px;
+  }
+
+  .meaning {
+    font-size: 14px;
+  }
+}
+
+/* チョーク風テクスチャエフェクト(オプション) */
+@media (min-width: 1024px) {
+  .word,
+  .meaning {
+    filter: contrast(1.1) brightness(1.05);
+  }
+}
+
+/* ブラウザ互換性対応 */
+@supports not (writing-mode: vertical-rl) {
+  .wordSection,
+  .meaningSection {
+    writing-mode: horizontal-tb;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Safari対応 */
+@supports (-webkit-marquee-repetition: infinite) {
+  .word,
+  .meaning {
+    -webkit-text-orientation: upright;
+  }
+}

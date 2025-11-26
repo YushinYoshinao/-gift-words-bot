@@ -1,0 +1,67 @@
+.inputGroup {
+  margin-bottom: var(--spacing-lg);
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-md);
+}
+
+.required {
+  color: var(--color-error);
+  margin-left: var(--spacing-xs);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+  line-height: 1.6;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.textarea:hover:not(:focus) {
+  border-color: var(--color-border-hover);
+}
+
+.textareaError {
+  border-color: var(--color-error);
+}
+
+.textareaError:focus {
+  border-color: var(--color-error);
+}
+
+.inputMeta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-xs);
+}
+
+.charCount {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.charCountWarning {
+  color: var(--color-warning);
+  font-weight: 600;
+}
+
+.errorMessage {
+  margin-top: var(--spacing-sm);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+}

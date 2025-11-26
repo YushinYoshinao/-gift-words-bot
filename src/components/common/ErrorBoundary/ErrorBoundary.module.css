@@ -1,0 +1,165 @@
+/**
+ * ErrorBoundary コンポーネントスタイル
+ * TASK-0040: ErrorBoundary実装
+ *
+ * 【スタイル目的】: エラー発生時のフォールバックUI表示
+ * 【実装方針】: シンプルで分かりやすいエラー表示デザイン
+ * 【テスト対応】: テストで検証される要素のスタイル定義
+ * 🔵 信頼性レベル: 要件定義書とプロジェクト既存パターンに基づく
+ */
+
+/* 【コンテナスタイル】: フォールバックUIの最外部コンテナ */
+/* 【実装方針】: 画面中央に配置し、ユーザーの注意を引く */
+/* 🔵 信頼性レベル: 既存コンポーネント（Button）のパターンを参考 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* 【コンテンツエリア】: エラーメッセージと操作ボタンを含む領域 */
+/* 【実装方針】: カード風デザインで視認性を高める */
+/* 🔵 信頼性レベル: 既存のモーダルコンポーネントパターンを参考 */
+.content {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 【タイトルスタイル】: エラー発生を示すh1要素 */
+/* 【実装方針】: 大きく目立つフォントサイズで注意を引く */
+/* 🔵 信頼性レベル: プロジェクト共通のタイポグラフィパターン */
+.content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #dc3545;
+  margin-bottom: 16px;
+}
+
+/* 【メッセージスタイル】: エラー説明文のp要素 */
+/* 【実装方針】: 読みやすいフォントサイズと行間 */
+/* 🔵 信頼性レベル: プロジェクト共通のテキストスタイル */
+.content p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* 【エラー詳細スタイル】: <details>要素の展開可能セクション */
+/* 【実装方針】: 技術的な詳細を折りたたみ可能にし、UIをクリーンに保つ */
+/* 🟡 信頼性レベル: 要件定義書のSHOULD機能から推測 */
+.content details {
+  margin-bottom: 24px;
+  text-align: left;
+  background-color: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* 【サマリースタイル】: <summary>要素のクリック可能な見出し */
+/* 【実装方針】: クリック可能であることを示すカーソル変更 */
+/* 🟡 信頼性レベル: 一般的なHTML detailsパターン */
+.content details summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+/* 【エラーメッセージ整形】: <pre>要素でエラー詳細を表示 */
+/* 【実装方針】: 技術情報を読みやすく整形し、スクロール可能にする */
+/* 🟡 信頼性レベル: 開発者ツール風の表示パターン */
+.content details pre {
+  background-color: #343a40;
+  color: #f8f9fa;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 【ボタンスタイル】: リセットボタンのデザイン */
+/* 【実装方針】: 既存のButtonコンポーネントスタイルを踏襲 */
+/* 【テスト対応】: テスト2-3（リセットボタン）の視覚的表現 */
+/* 🔵 信頼性レベル: 既存Button.module.cssパターンを参考 */
+.content button {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-primary, #007bff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 【ボタンホバー効果】: マウスオーバー時の視覚フィードバック */
+/* 【実装方針】: 既存Buttonコンポーネントと同じホバー効果 */
+/* 🔵 信頼性レベル: 既存Button.module.cssパターンを参考 */
+.content button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 【ボタンアクティブ効果】: クリック時のフィードバック */
+/* 【実装方針】: クリック感を演出 */
+/* 🔵 信頼性レベル: 一般的なボタンUIパターン */
+.content button:active {
+  transform: translateY(0);
+}
+
+/* 【レスポンシブデザイン】: タブレット・モバイル対応 */
+/* 【実装方針】: 小画面でもエラーUIが適切に表示されるよう調整 */
+/* 🔵 信頼性レベル: 既存コンポーネントのレスポンシブパターンを参考 */
+@media (max-width: 768px) {
+  .content {
+    padding: 30px 20px;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .content button {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}
+
+/* 【小型モバイル対応】: さらに小さい画面での最適化 */
+/* 【実装方針】: 小さい画面でも読みやすさを保つ */
+/* 🔵 信頼性レベル: 既存コンポーネントのレスポンシブパターンを参考 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+
+  .content h1 {
+    font-size: 20px;
+  }
+
+  .content details pre {
+    font-size: 12px;
+  }
+}

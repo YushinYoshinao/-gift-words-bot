@@ -1,0 +1,141 @@
+/**
+ * ImageSaveButton.module.css
+ * TASK-0039: 画像保存ボタンコンポーネント スタイルシート
+ *
+ * 【スタイル概要】: 画像保存ボタンとローディング表示のスタイル定義 🔵
+ * 【実装方針】: レスポンシブデザイン、アクセシビリティ対応、スムーズなアニメーション 🔵
+ * 【テスト対応】: テストケース3-2, 4-2で使用されるクラスを定義 🔵
+ */
+
+/* ========================================
+   コンテナスタイル
+   ======================================== */
+
+/**
+ * .container - ボタンとローディング表示を含むコンテナ
+ * 【機能】: ボタンとローディング表示を縦方向に配置 🔵
+ * 【レイアウト】: フレックスボックスで中央寄せ 🔵
+ */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* ========================================
+   ローディング表示スタイル
+   ======================================== */
+
+/**
+ * .loading - ローディングインジケーターコンテナ
+ * 【機能】: スピナーとステータステキストを表示 🔵
+ * 【アクセシビリティ】: role="status"と組み合わせて使用 🔵
+ */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* ========================================
+   スピナーアニメーション
+   ======================================== */
+
+/**
+ * .spinner - 回転するローディングスピナー
+ * 【機能】: 画像生成中であることを視覚的に表示 🔵
+ * 【アニメーション】: 無限回転アニメーション 🔵
+ */
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/**
+ * @keyframes spin - スピナー回転アニメーション定義
+ * 【機能】: 360度回転のスムーズなアニメーション 🔵
+ * 【パフォーマンス】: transform使用で高速レンダリング 🔵
+ */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   アクセシビリティ - スクリーンリーダー専用
+   ======================================== */
+
+/**
+ * .sr-only - スクリーンリーダー専用テキスト
+ * 【機能】: 視覚的には非表示だがスクリーンリーダーで読み上げ可能 🔵
+ * 【アクセシビリティ】: NFR-205要件を満たす 🔵
+ * 【注意】: display:noneやvisibility:hiddenは使用しない（読み上げされなくなる） 🔵
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========================================
+   レスポンシブデザイン
+   ======================================== */
+
+/**
+ * モバイル対応 - 768px以下
+ * 【機能】: 小画面でもボタンとローディング表示が見やすいように調整 🔵
+ * 【レイアウト】: パディングとギャップを縮小 🔵
+ */
+@media (max-width: 768px) {
+  .container {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .loading {
+    gap: 0.375rem;
+    padding: 0.375rem;
+  }
+
+  .spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 2px;
+  }
+}
+
+/**
+ * 小型モバイル対応 - 480px以下
+ * 【機能】: より小さい画面での表示最適化 🔵
+ * 【レイアウト】: さらにコンパクトなサイズに調整 🔵
+ */
+@media (max-width: 480px) {
+  .container {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

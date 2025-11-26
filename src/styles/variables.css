@@ -1,0 +1,86 @@
+/**
+ * CSS変数定義
+ *
+ * プロジェクト全体で使用するCSS変数を定義
+ * REQ-233: チョーク風の色（#f0f0f0または#fffacd）
+ * NFR-203: レスポンシブデザイン対応
+ */
+
+:root {
+  /* カラーパレット */
+  --color-primary: #4a90e2;
+  --color-secondary: #7b68ee;
+  --color-success: #52c41a;
+  --color-error: #f5222d;
+  --color-warning: #faad14;
+  --color-info: #1890ff;
+
+  /* チョーク風の色（REQ-233） */
+  --chalk-color-white: #f0f0f0;
+  --chalk-color-yellow: #fffacd;
+  --blackboard-bg: rgba(0, 0, 0, 0.8);
+
+  /* 黒板風カラー */
+  --color-blackboard: #2d4a2b;
+  --color-chalk: var(--chalk-color-white);
+  --color-chalk-alt: var(--chalk-color-yellow);
+
+  /* 基本カラー */
+  --color-background: #f5f5f5;
+  --color-text: #333;
+  --color-border: #ddd;
+
+  /* フォント */
+  --font-family-base: 'Noto Sans JP', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', sans-serif;
+  --font-family-serif: 'Noto Serif JP', serif;
+
+  /* フォントサイズ */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  /* スペーシング */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* ブレイクポイント（NFR-203） */
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+
+  /* ボーダー */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+
+  /* アニメーション */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* タイプライター（REQ-231） */
+  --typewriter-delay: 100ms;
+
+  /* シャドウ */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+
+  /* z-index */
+  --z-toast: 9999;
+  --z-modal: 1000;
+  --z-overlay: 999;
+  --z-dropdown: 100;
+}

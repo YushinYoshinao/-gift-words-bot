@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-lg);
+}
+
+.content {
+  background: white;
+  border-radius: 16px;
+  padding: var(--spacing-2xl);
+  max-width: 500px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.icon {
+  font-size: 64px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: #333;
+}
+
+.message {
+  font-size: var(--font-size-lg);
+  color: #666;
+  margin-bottom: var(--spacing-xl);
+}
+
+.suggestions {
+  text-align: left;
+  background: #f8f9fa;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.suggestions p {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.suggestions ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.suggestions li {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.suggestions li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--spacing-lg);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+}

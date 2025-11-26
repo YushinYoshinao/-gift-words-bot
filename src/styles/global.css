@@ -1,0 +1,140 @@
+/**
+ * グローバルスタイル
+ *
+ * プロジェクト全体に適用されるスタイル
+ * CSS変数とリセットスタイルをインポート
+ *
+ * REQ-232: 縦書きCSS writing-mode: vertical-rl
+ * REQ-233: チョーク風の色
+ * NFR-203: レスポンシブデザイン
+ * NFR-204: セマンティックHTML
+ * NFR-205: アクセシビリティ対応
+ */
+
+@import './reset.css';
+@import './variables.css';
+
+/* Body styling */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* 縦書きユーティリティクラス（REQ-232） */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-family-serif);
+}
+
+/* レスポンシブコンテナ（NFR-203） */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* テキストユーティリティ */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* アクセシビリティ（NFR-205） */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* キーボードフォーカス（NFR-205） */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* フレックスユーティリティ */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* スペーシングユーティリティ */
+.mt-1 {
+  margin-top: var(--spacing-xs);
+}
+.mt-2 {
+  margin-top: var(--spacing-sm);
+}
+.mt-3 {
+  margin-top: var(--spacing-md);
+}
+.mt-4 {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-xs);
+}
+.mb-2 {
+  margin-bottom: var(--spacing-sm);
+}
+.mb-3 {
+  margin-bottom: var(--spacing-md);
+}
+.mb-4 {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ボタンリセット */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

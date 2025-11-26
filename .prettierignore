@@ -1,0 +1,26 @@
+# Prettier除外設定
+# TASK-0006: Prettier設定
+
+# ビルド成果物
+dist
+dist-ssr
+*.local
+
+# 依存関係
+node_modules
+
+# パッケージロックファイル
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# ドキュメント（既存フォーマット維持）
+*.md
+
+# ログファイル
+logs
+*.log
+npm-debug.log*
+
+# カバレッジ
+coverage

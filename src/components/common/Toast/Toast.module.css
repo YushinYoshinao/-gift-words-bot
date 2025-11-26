@@ -1,0 +1,107 @@
+/**
+ * Toast CSS Module
+ */
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  background: #ffffff !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.25);
+  min-width: 320px;
+  animation: slideIn 0.3s ease-out;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.message {
+  flex: 1;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  color: var(--color-gray-600);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: var(--color-gray-900);
+}
+
+/* Toast Types */
+.success {
+  border-left: 4px solid var(--color-success);
+}
+
+.success .icon {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.error {
+  border-left: 4px solid var(--color-error);
+}
+
+.error .icon {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.warning {
+  border-left: 4px solid var(--color-warning);
+}
+
+.warning .icon {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.info {
+  border-left: 4px solid var(--color-info);
+}
+
+.info .icon {
+  background-color: var(--color-info-light);
+  color: var(--color-info);
+}
+
+@media (max-width: 768px) {
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}

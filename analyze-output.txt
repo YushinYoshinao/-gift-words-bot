@@ -1,0 +1,25 @@
+
+> gift-words-bot@1.0.0 analyze
+> vite build --mode analyze
+
+[36mvite v5.4.21 [32mbuilding for analyze...[36m[39m
+transforming...
+[32m✓[39m 72 modules transformed.
+Generated an empty chunk: "html2canvas-vendor".
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                             [39m[1m[2m  1.97 kB[22m[1m[22m[2m │ gzip:  0.95 kB[22m
+[2mdist/[22m[35massets/Button-Dh2-8Xcm.css             [39m[1m[2m  0.43 kB[22m[1m[22m[2m │ gzip:  0.27 kB[22m
+[2mdist/[22m[35massets/index-DktN7EbI.css              [39m[1m[2m  1.23 kB[22m[1m[22m[2m │ gzip:  0.49 kB[22m
+[2mdist/[22m[35massets/index-DDOvpTxj.css              [39m[1m[2m  3.87 kB[22m[1m[22m[2m │ gzip:  1.50 kB[22m
+[2mdist/[22m[35massets/index-DISaQHc5.css              [39m[1m[2m  5.60 kB[22m[1m[22m[2m │ gzip:  1.60 kB[22m
+[2mdist/[22m[35massets/index-iPq3sFFK.css              [39m[1m[2m  6.73 kB[22m[1m[22m[2m │ gzip:  1.50 kB[22m
+[2mdist/[22m[36massets/html2canvas-vendor-l0sNRNKZ.js  [39m[1m[2m  0.00 kB[22m[1m[22m[2m │ gzip:  0.02 kB[22m
+[2mdist/[22m[36massets/Button-DbGc8fnz.js              [39m[1m[2m  0.69 kB[22m[1m[22m[2m │ gzip:  0.42 kB[22m
+[2mdist/[22m[36massets/index-DS7Nwz70.js               [39m[1m[2m  0.90 kB[22m[1m[22m[2m │ gzip:  0.60 kB[22m
+[2mdist/[22m[36massets/ToastContext-awHdHa3L.js        [39m[1m[2m  1.43 kB[22m[1m[22m[2m │ gzip:  1.02 kB[22m
+[2mdist/[22m[36massets/index-BaJ5LdTN.js               [39m[1m[2m  2.70 kB[22m[1m[22m[2m │ gzip:  1.32 kB[22m
+[2mdist/[22m[36massets/index-BpXvrKAd.js               [39m[1m[2m  3.78 kB[22m[1m[22m[2m │ gzip:  1.89 kB[22m
+[2mdist/[22m[36massets/index-DeOMP7_B.js               [39m[1m[2m  5.76 kB[22m[1m[22m[2m │ gzip:  2.35 kB[22m
+[2mdist/[22m[36massets/react-vendor-Zvb60vD9.js        [39m[1m[2m158.35 kB[22m[1m[22m[2m │ gzip: 51.58 kB[22m
+[32m✓ built in 2.89s[39m

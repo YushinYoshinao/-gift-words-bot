@@ -1,0 +1,23 @@
+# ESLint除外設定
+# TASK-0005: ESLint設定
+
+# ビルド成果物
+dist
+dist-ssr
+*.local
+
+# 依存関係
+node_modules
+
+# 設定ファイル
+*.config.js
+*.config.ts
+vite-env.d.ts
+
+# テストカバレッジ
+coverage
+
+# ログファイル
+logs
+*.log
+npm-debug.log*

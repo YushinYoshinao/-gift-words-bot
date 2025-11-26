@@ -1,0 +1,48 @@
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  pointer-events: none;
+  padding-left: 10%;
+}
+
+.image {
+  /* REQ-202: 中央寄りに配置 */
+  height: 100%;
+  max-width: 60%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* タブレット */
+@media (max-width: 1024px) {
+  .image {
+    max-width: 50%;
+  }
+}
+
+/* スマートフォン(横向き) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .image {
+    max-width: 45%;
+  }
+}
+
+/* スマートフォン(縦向き) */
+@media (max-width: 768px) and (orientation: portrait) {
+  .container {
+    justify-content: center;
+  }
+
+  .image {
+    max-width: 80%;
+    object-position: center center;
+    opacity: 0.3;
+  }
+}
