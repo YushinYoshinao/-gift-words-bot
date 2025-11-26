@@ -160,21 +160,33 @@
   }
 }
 
-/* スマートフォン横向き - PC版と同じレイアウト */
+/* スマートフォン横向き - 画面に収まるように調整 */
 @media (max-width: 768px) and (orientation: landscape) {
   .container {
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
     height: 100vh;
+    padding: var(--spacing-md);
+  }
+
+  .wordSection {
+    padding-right: var(--spacing-lg); /* 右に余裕を持たせる */
   }
 
   .word {
-    font-size: 48px; /* PC版に近いサイズ */
-    height: 85vh;
+    font-size: 32px; /* 画面に収まるサイズ */
+    height: 75vh; /* 縦幅に収める */
+    max-height: 75vh;
   }
 
   .meaning {
-    font-size: 20px; /* PC版に近いサイズ */
-    max-height: 85vh;
+    font-size: 16px; /* 読みやすいサイズ */
+    max-height: 75vh;
+  }
+
+  .meaningSection::after {
+    /* 【意味】ラベルの位置調整 */
+    left: calc(100% + var(--spacing-xs));
+    font-size: 12px;
   }
 
   .skipHint {
